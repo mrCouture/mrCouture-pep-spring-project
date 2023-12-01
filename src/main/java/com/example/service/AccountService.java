@@ -1,13 +1,22 @@
 package com.example.service;
 
-import javax.naming.Context;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.example.entity.Account;
+import com.example.entity.Message;
+
+//import org.springframework.bean.factory.annotation.Service;
+//import org.springframework.stereotype.Service;
+//import com.example.entity.Account;
+//import org.springframework.http.ResponseEntity;
 
 @Service
 public class AccountService {
 
 public ResponseEntity<Account> endRegister(Account incoming) throws Exception
 {
-	if(incoming.getUsername()==null)		return new ResponseEntity<>(400);
+	if(incoming.getUsername()==null)		return ResponseEntity.status(400).build();
 	if(incoming.getUsername().isBlank())	return new ResponseEntity<>(400);
 	if(incoming.getPassword()==null)		return new ResponseEntity<>(400);
 	if(incoming.getPassword().length()<4)	return new ResponseEntity<>(400);
