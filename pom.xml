@@ -23,6 +23,7 @@
   </properties>
 
   <dependencies>
+
   <!--I guess spring-boot-starter-parent brings these in-->
 <!--    <dependency>-->
 <!--      <groupId>org.springframework</groupId>-->
