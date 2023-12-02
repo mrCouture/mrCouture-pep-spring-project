@@ -57,18 +57,25 @@ public ResponseEntity<List<Message>> endMessagesGET_ALL(){
 }
 
 @GetMapping("messages/{message_id}")
-public ResponseEntity<Account> endMessageGET_BY_ID(@RequestBody Account incoming){
-	return null;
+public ResponseEntity<Message> endMessageGET_BY_ID(
+	@PathVariable(name="message_id",required=true) Integer message_id)
+{
+	return messageService.endMessageGET_BY_ID(message_id);
 }
 
 @DeleteMapping("messages/{message_id}")
-public ResponseEntity<Account> endMessageDELETE_BY_ID(@RequestBody Account incoming){
-	return null;
+public ResponseEntity<Integer> endMessageDELETE_BY_ID(
+	@PathVariable(name="message_id",required=true) Integer message_id)
+{
+	return messageService.endMessageDELETE_BY_ID(message_id);
 }
 
 @PatchMapping("messages/{message_id}")
-public ResponseEntity<Account> endMessagePATCH_BY_ID(@RequestBody Account incoming){
-	return null;
+public ResponseEntity<Integer> endMessagePATCH_BY_ID(
+	@PathVariable(name="message_id",required=true) Integer message_id,
+	@RequestBody(required=true) Message incoming)
+{
+	return messageService.endMessagePATCH_BY_ID(message_id,incoming);
 }
 
 }//end class
