@@ -52,6 +52,7 @@ public ResponseEntity<Account> endLogin(Account incoming)
 
 public ResponseEntity<List<Message>> endMessagesGivenAccountId(Integer searchAccountId)
 {
+	//Spring can check url path params
 	// if(searchAccountId==null)
 	// {ctx.status(400);return;}
 	// if(searchAccountId<0)

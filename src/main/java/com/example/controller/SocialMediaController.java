@@ -47,8 +47,8 @@ public ResponseEntity<List<Message>> endMessagesGivenAccountId(
 }
 
 @PostMapping("messages")
-public ResponseEntity<Account> endMessagesPOST(@RequestBody Account incoming){
-	return null;
+public ResponseEntity<Message> endMessagesPOST(@RequestBody(required=true) Message incoming){
+	return messageService.endMessagesPOST(incoming);
 }
 
 @GetMapping("messages")

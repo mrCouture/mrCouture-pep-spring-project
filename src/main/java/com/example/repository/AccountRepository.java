@@ -11,4 +11,15 @@ public interface AccountRepository extends JpaRepository<Account,Integer>
     Account findAccountByUsername(String username);
 
 	Account findAccountByUsernameAndPassword(String username,String password);
+
+	
+
+	//Error: No property accountId found for type Account! Did you mean 'account_id'?
+	//Account findAccountByAccountId(Integer account_id);
+
+	//Error: No property accountId found for type Account! Did you mean 'account_id'?
+	//Account findAccountByAccountId(Integer accountId);
+
+	//Error: No property account found for type Account!
+	//Account findAccountByAccount_id(Integer accountId);
 }
