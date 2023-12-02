@@ -52,8 +52,8 @@ public ResponseEntity<Message> endMessagesPOST(@RequestBody(required=true) Messa
 }
 
 @GetMapping("messages")
-public ResponseEntity<Account> endMessagesGET_ALL(@RequestBody Account incoming){
-	return null;
+public ResponseEntity<List<Message>> endMessagesGET_ALL(){
+	return messageService.endMessagesGET_ALL();
 }
 
 @GetMapping("messages/{message_id}")

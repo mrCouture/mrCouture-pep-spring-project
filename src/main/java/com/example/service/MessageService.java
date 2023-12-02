@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -34,6 +36,12 @@ public ResponseEntity<Message> endMessagesPOST(Message incoming)
 
 	//incoming.setMessage_id(newMessage.getMessage_id());
 	return ResponseEntity.ok(newMessage);
+}
+
+
+public ResponseEntity<List<Message>> endMessagesGET_ALL()
+{
+	return ResponseEntity.ok(messageDAO.findAll());
 }
 
 }//end class
