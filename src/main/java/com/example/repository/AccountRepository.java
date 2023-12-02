@@ -15,8 +15,9 @@ public interface AccountRepository extends JpaRepository<Account,Integer>
 
 	//Can't rename all the variables to camelCase because 
 	//tests would need to change and I can't change those
-	@Query("from Account where account_id=?1")
-	Account findAccountByAccountId(Integer accountId);
+	//stupidly realized I should use findById()
+	// @Query("from Account where account_id=?1")
+	// Account findAccountByAccountId(Integer accountId);
 
 	//Error: No property accountId found for type Account! Did you mean 'account_id'?
 	//Account findAccountByAccountId(Integer account_id);

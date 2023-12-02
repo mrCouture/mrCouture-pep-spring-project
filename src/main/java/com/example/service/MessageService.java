@@ -27,7 +27,7 @@ public ResponseEntity<Message> endMessagesPOST(Message incoming)
 		return ResponseEntity.status(400).build();
 
 	//Check that posted_by matches an existing user
-	Account existingAccount=accountDAO.findAccountByAccountId(incoming.getPosted_by());
+	Account existingAccount=accountDAO.findById(incoming.getPosted_by()).orElse(null);
 
 	if(existingAccount==null)
 		return ResponseEntity.status(400).build();//no rows given posted_by account_id
