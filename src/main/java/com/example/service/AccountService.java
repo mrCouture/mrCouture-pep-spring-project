@@ -35,4 +35,14 @@ public ResponseEntity<Account> endRegister(Account incoming)
 	return ResponseEntity.ok(newAccount);
 }
 
+public ResponseEntity<Account> endLogin(Account incoming)
+{
+	Account existingAccount=accountDAO.findAccountByUsernameAndPassword(incoming.getUsername(),incoming.getPassword());
+
+	if(existingAccount==null)
+	return ResponseEntity.status(401).build();
+
+	return ResponseEntity.ok(existingAccount);
+}
+
 }//end class

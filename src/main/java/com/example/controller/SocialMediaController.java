@@ -32,7 +32,7 @@ public ResponseEntity<Account> endRegister(@RequestBody Account incoming){
 
 @PostMapping("login")
 public ResponseEntity<Account> endLogin(@RequestBody Account incoming){
-	return null;//accountService.endLogin(incoming);
+	return accountService.endLogin(incoming);
 }
 
 @GetMapping("accounts/{account_id}/messages")
